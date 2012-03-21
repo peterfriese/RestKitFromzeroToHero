@@ -23,7 +23,7 @@
     
     UserDetailsController *userDetailsControllerJson = [[UserDetailsController alloc] init];
     userDetailsControllerJson.protocol = @"json";
-    [userDetailsControllerJson setUserName:@"peterfriese"];
+    [userDetailsControllerJson setUserName:@"octocat"];
     userDetailsControllerJson.tabBarItem.title = @"User Details (JSON)";
     
     UserDetailsController *userDetailsControllerXml = [[UserDetailsController alloc] init];
@@ -31,9 +31,13 @@
     [userDetailsControllerXml setUserName:@"peterfriese"];
     userDetailsControllerXml.tabBarItem.title = @"User Details (XML)";
     
+    UIViewController *dummy = [[UIViewController alloc] init];
+    dummy.tabBarItem.title = @"Welcome";
+    
     
     tabbarController = [[UITabBarController alloc] init];
     [tabbarController setViewControllers:[NSArray arrayWithObjects:
+                                          dummy,
                                           userDetailsControllerJson, 
                                           userDetailsControllerXml,                                           
                                           nil]];
