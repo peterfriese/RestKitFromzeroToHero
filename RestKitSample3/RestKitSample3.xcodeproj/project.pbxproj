@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		885A528F151A89AE00703B73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A528E151A89AE00703B73 /* UIKit.framework */; };
+		885A5291151A89AE00703B73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A5290151A89AE00703B73 /* Foundation.framework */; };
+		885A5293151A89AE00703B73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A5292151A89AE00703B73 /* CoreGraphics.framework */; };
+		885A5299151A89AE00703B73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 885A5297151A89AE00703B73 /* InfoPlist.strings */; };
+		885A529B151A89AE00703B73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A529A151A89AE00703B73 /* main.m */; };
+		885A529F151A89AE00703B73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A529E151A89AE00703B73 /* AppDelegate.m */; };
+		885A52B9151A8A3400703B73 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52B0151A89C500703B73 /* libRestKit.a */; };
+		885A52C3151A8A3400703B73 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52BA151A8A3400703B73 /* CFNetwork.framework */; };
+		885A52C4151A8A3400703B73 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52BB151A8A3400703B73 /* CoreData.framework */; };
+		885A52C5151A8A3400703B73 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52BC151A8A3400703B73 /* CoreLocation.framework */; };
+		885A52C6151A8A3400703B73 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52BD151A8A3400703B73 /* libxml2.dylib */; };
+		885A52C7151A8A3400703B73 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52BE151A8A3400703B73 /* MapKit.framework */; };
+		885A52C8151A8A3400703B73 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52BF151A8A3400703B73 /* MobileCoreServices.framework */; };
+		885A52C9151A8A3400703B73 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52C0151A8A3400703B73 /* QuartzCore.framework */; };
+		885A52CA151A8A3400703B73 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52C1151A8A3400703B73 /* Security.framework */; };
+		885A52CB151A8A3400703B73 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A52C2151A8A3400703B73 /* SystemConfiguration.framework */; };
+		885A52F4151A8B1400703B73 /* BrowseIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52EB151A8B1300703B73 /* BrowseIssuesViewController.m */; };
+		885A52F5151A8B1400703B73 /* BrowseReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52ED151A8B1400703B73 /* BrowseReposViewController.m */; };
+		885A52F6151A8B1400703B73 /* GithubIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52EF151A8B1400703B73 /* GithubIssue.m */; };
+		885A52F7151A8B1400703B73 /* GithubRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52F1151A8B1400703B73 /* GithubRepo.m */; };
+		885A52F8151A8B1400703B73 /* GithubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52F3151A8B1400703B73 /* GithubUser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		885A52AF151A89C500703B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		885A52B1151A89C500703B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		885A52B3151A89C500703B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		885A52B5151A89C500703B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		885A52B7151A8A0200703B73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		885A528A151A89AE00703B73 /* RestKitSample3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestKitSample3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		885A528E151A89AE00703B73 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		885A5290151A89AE00703B73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		885A5292151A89AE00703B73 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		885A5296151A89AE00703B73 /* RestKitSample3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RestKitSample3-Info.plist"; sourceTree = "<group>"; };
+		885A5298151A89AE00703B73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		885A529A151A89AE00703B73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		885A529C151A89AE00703B73 /* RestKitSample3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RestKitSample3-Prefix.pch"; sourceTree = "<group>"; };
+		885A529D151A89AE00703B73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		885A529E151A89AE00703B73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		885A52A5151A89C500703B73 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../Frameworks/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		885A52BA151A8A3400703B73 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		885A52BB151A8A3400703B73 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		885A52BC151A8A3400703B73 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		885A52BD151A8A3400703B73 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		885A52BE151A8A3400703B73 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		885A52BF151A8A3400703B73 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		885A52C0151A8A3400703B73 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		885A52C1151A8A3400703B73 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		885A52C2151A8A3400703B73 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		885A52EA151A8B1300703B73 /* BrowseIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseIssuesViewController.h; sourceTree = "<group>"; };
+		885A52EB151A8B1300703B73 /* BrowseIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseIssuesViewController.m; sourceTree = "<group>"; };
+		885A52EC151A8B1300703B73 /* BrowseReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseReposViewController.h; sourceTree = "<group>"; };
+		885A52ED151A8B1400703B73 /* BrowseReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseReposViewController.m; sourceTree = "<group>"; };
+		885A52EE151A8B1400703B73 /* GithubIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubIssue.h; sourceTree = "<group>"; };
+		885A52EF151A8B1400703B73 /* GithubIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubIssue.m; sourceTree = "<group>"; };
+		885A52F0151A8B1400703B73 /* GithubRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepo.h; sourceTree = "<group>"; };
+		885A52F1151A8B1400703B73 /* GithubRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepo.m; sourceTree = "<group>"; };
+		885A52F2151A8B1400703B73 /* GithubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubUser.h; sourceTree = "<group>"; };
+		885A52F3151A8B1400703B73 /* GithubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubUser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		885A5287151A89AD00703B73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				885A52C3151A8A3400703B73 /* CFNetwork.framework in Frameworks */,
+				885A52C4151A8A3400703B73 /* CoreData.framework in Frameworks */,
+				885A52C5151A8A3400703B73 /* CoreLocation.framework in Frameworks */,
+				885A52C6151A8A3400703B73 /* libxml2.dylib in Frameworks */,
+				885A52C7151A8A3400703B73 /* MapKit.framework in Frameworks */,
+				885A52C8151A8A3400703B73 /* MobileCoreServices.framework in Frameworks */,
+				885A52C9151A8A3400703B73 /* QuartzCore.framework in Frameworks */,
+				885A52CA151A8A3400703B73 /* Security.framework in Frameworks */,
+				885A52CB151A8A3400703B73 /* SystemConfiguration.framework in Frameworks */,
+				885A52B9151A8A3400703B73 /* libRestKit.a in Frameworks */,
+				885A528F151A89AE00703B73 /* UIKit.framework in Frameworks */,
+				885A5291151A89AE00703B73 /* Foundation.framework in Frameworks */,
+				885A5293151A89AE00703B73 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		885A527F151A89AD00703B73 = {
+			isa = PBXGroup;
+			children = (
+				885A52A5151A89C500703B73 /* RestKit.xcodeproj */,
+				885A5294151A89AE00703B73 /* RestKitSample3 */,
+				885A528D151A89AE00703B73 /* Frameworks */,
+				885A528B151A89AE00703B73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		885A528B151A89AE00703B73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				885A528A151A89AE00703B73 /* RestKitSample3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		885A528D151A89AE00703B73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				885A52BA151A8A3400703B73 /* CFNetwork.framework */,
+				885A52BB151A8A3400703B73 /* CoreData.framework */,
+				885A52BC151A8A3400703B73 /* CoreLocation.framework */,
+				885A52BD151A8A3400703B73 /* libxml2.dylib */,
+				885A52BE151A8A3400703B73 /* MapKit.framework */,
+				885A52BF151A8A3400703B73 /* MobileCoreServices.framework */,
+				885A52C0151A8A3400703B73 /* QuartzCore.framework */,
+				885A52C1151A8A3400703B73 /* Security.framework */,
+				885A52C2151A8A3400703B73 /* SystemConfiguration.framework */,
+				885A528E151A89AE00703B73 /* UIKit.framework */,
+				885A5290151A89AE00703B73 /* Foundation.framework */,
+				885A5292151A89AE00703B73 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		885A5294151A89AE00703B73 /* RestKitSample3 */ = {
+			isa = PBXGroup;
+			children = (
+				885A529D151A89AE00703B73 /* AppDelegate.h */,
+				885A529E151A89AE00703B73 /* AppDelegate.m */,
+				885A52EA151A8B1300703B73 /* BrowseIssuesViewController.h */,
+				885A52EB151A8B1300703B73 /* BrowseIssuesViewController.m */,
+				885A52EC151A8B1300703B73 /* BrowseReposViewController.h */,
+				885A52ED151A8B1400703B73 /* BrowseReposViewController.m */,
+				885A52EE151A8B1400703B73 /* GithubIssue.h */,
+				885A52EF151A8B1400703B73 /* GithubIssue.m */,
+				885A52F0151A8B1400703B73 /* GithubRepo.h */,
+				885A52F1151A8B1400703B73 /* GithubRepo.m */,
+				885A52F2151A8B1400703B73 /* GithubUser.h */,
+				885A52F3151A8B1400703B73 /* GithubUser.m */,
+				885A5295151A89AE00703B73 /* Supporting Files */,
+			);
+			path = RestKitSample3;
+			sourceTree = "<group>";
+		};
+		885A5295151A89AE00703B73 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				885A5296151A89AE00703B73 /* RestKitSample3-Info.plist */,
+				885A5297151A89AE00703B73 /* InfoPlist.strings */,
+				885A529A151A89AE00703B73 /* main.m */,
+				885A529C151A89AE00703B73 /* RestKitSample3-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		885A52A6151A89C500703B73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				885A52B0151A89C500703B73 /* libRestKit.a */,
+				885A52B2151A89C500703B73 /* RestKitTests.octest */,
+				885A52B4151A89C500703B73 /* RestKit.framework */,
+				885A52B6151A89C500703B73 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		885A5289151A89AD00703B73 /* RestKitSample3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 885A52A2151A89AE00703B73 /* Build configuration list for PBXNativeTarget "RestKitSample3" */;
+			buildPhases = (
+				885A5286151A89AD00703B73 /* Sources */,
+				885A5287151A89AD00703B73 /* Frameworks */,
+				885A5288151A89AD00703B73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				885A52B8151A8A0200703B73 /* PBXTargetDependency */,
+			);
+			name = RestKitSample3;
+			productName = RestKitSample3;
+			productReference = 885A528A151A89AE00703B73 /* RestKitSample3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		885A5281151A89AD00703B73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 885A5284151A89AD00703B73 /* Build configuration list for PBXProject "RestKitSample3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 885A527F151A89AD00703B73;
+			productRefGroup = 885A528B151A89AE00703B73 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 885A52A6151A89C500703B73 /* Products */;
+					ProjectRef = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				885A5289151A89AD00703B73 /* RestKitSample3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		885A52B0151A89C500703B73 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 885A52AF151A89C500703B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		885A52B2151A89C500703B73 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 885A52B1151A89C500703B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		885A52B4151A89C500703B73 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 885A52B3151A89C500703B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		885A52B6151A89C500703B73 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 885A52B5151A89C500703B73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		885A5288151A89AD00703B73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				885A5299151A89AE00703B73 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		885A5286151A89AD00703B73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				885A529B151A89AE00703B73 /* main.m in Sources */,
+				885A529F151A89AE00703B73 /* AppDelegate.m in Sources */,
+				885A52F4151A8B1400703B73 /* BrowseIssuesViewController.m in Sources */,
+				885A52F5151A8B1400703B73 /* BrowseReposViewController.m in Sources */,
+				885A52F6151A8B1400703B73 /* GithubIssue.m in Sources */,
+				885A52F7151A8B1400703B73 /* GithubRepo.m in Sources */,
+				885A52F8151A8B1400703B73 /* GithubUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		885A52B8151A8A0200703B73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 885A52B7151A8A0200703B73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		885A5297151A89AE00703B73 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				885A5298151A89AE00703B73 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		885A52A0151A89AE00703B73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		885A52A1151A89AE00703B73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		885A52A3151A89AE00703B73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestKitSample3/RestKitSample3-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../Frameworks/RestKit/build";
+				INFOPLIST_FILE = "RestKitSample3/RestKitSample3-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		885A52A4151A89AE00703B73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestKitSample3/RestKitSample3-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../Frameworks/RestKit/build";
+				INFOPLIST_FILE = "RestKitSample3/RestKitSample3-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		885A5284151A89AD00703B73 /* Build configuration list for PBXProject "RestKitSample3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				885A52A0151A89AE00703B73 /* Debug */,
+				885A52A1151A89AE00703B73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		885A52A2151A89AE00703B73 /* Build configuration list for PBXNativeTarget "RestKitSample3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				885A52A3151A89AE00703B73 /* Debug */,
+				885A52A4151A89AE00703B73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 885A5281151A89AD00703B73 /* Project object */;
+}
