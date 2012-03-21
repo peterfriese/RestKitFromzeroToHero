@@ -11,7 +11,6 @@
 
 @interface BrowseIssuesViewController ()
 {
-    RKObjectMapping *objectMapping;
     NSArray *issues;
 }
 @end
@@ -20,20 +19,6 @@
 
 @synthesize repositoryUrl;
 
-- (RKObjectMapping *)mapping
-{
-    if (objectMapping == nil) {
-        // define mapping from JSON data structure to object structure
-        objectMapping = [RKObjectMapping mappingForClass:[GithubIssue class]];
-        [objectMapping mapKeyPath:@"url" toAttribute:@"url"];
-        [objectMapping mapKeyPath:@"number" toAttribute:@"number"];
-        [objectMapping mapKeyPath:@"state" toAttribute:@"state"];
-        [objectMapping mapKeyPath:@"title" toAttribute:@"title"];
-        [objectMapping mapKeyPath:@"body" toAttribute:@"body"];
-    }
-    return objectMapping;    
-}
-
 - (NSString *)resourcePath
 {
     return [NSString stringWithFormat:@"%@/issues", repositoryUrl];
@@ -41,9 +26,13 @@
 
 - (void)fetchData
 {
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[self resourcePath]
-                                                 objectMapping:[self mapping] 
-                                                      delegate:self];
+    RKObjectMapping *mapping = [[[RKObjectManager sharedManager] mappingProvider] objectMappingForClass:[GithubIssue class]];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[self resourcePath] objectMapping:mapping delegate:self];
+    
+    
+//    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[self resourcePath]
+//                                                 objectMapping:[self mapping] 
+//                                                      delegate:self];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
@@ -104,12 +93,13 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
     GithubIssue *issue = (GithubIssue *)[issues objectAtIndex:[indexPath row]];
     cell.textLabel.text = issue.title;
+    cell.detailTextLabel.text = issue.user.login;
     
     return cell;
 }

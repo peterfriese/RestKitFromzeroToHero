@@ -11,6 +11,7 @@
 @interface GithubUser : NSObject
 
 @property (strong, nonatomic) NSNumber *id;
+@property (strong, nonatomic) NSString *login;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *company;
 @property (strong, nonatomic) NSString *location;

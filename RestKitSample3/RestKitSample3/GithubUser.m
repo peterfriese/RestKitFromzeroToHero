@@ -11,6 +11,7 @@
 @implementation GithubUser
 
 @synthesize id;
+@synthesize login;
 @synthesize name;
 @synthesize company;
 @synthesize location;
