@@ -1,3 +1,6 @@
 [submodule "Frameworks/RestKit"]
 	path = Frameworks/RestKit
 	url = git://github.com/RestKit/RestKit.git
+[submodule "Frameworks/QuickDialog"]
+	path = Frameworks/QuickDialog
+	url = git@github.com:escoz/QuickDialog.git
