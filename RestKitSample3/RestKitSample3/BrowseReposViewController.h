@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginInfo.h"
 
 @interface BrowseReposViewController : UITableViewController<RKObjectLoaderDelegate>
+
+@property (strong, nonatomic) LoginInfo *loginInfo;
 
 @end

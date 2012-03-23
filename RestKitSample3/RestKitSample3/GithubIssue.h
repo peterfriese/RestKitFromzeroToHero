@@ -27,4 +27,7 @@
 @property (strong, nonatomic) NSDate *created_at;
 @property (strong, nonatomic) NSDate *updated_at;
 
+@property (strong, nonatomic) NSString *repouser;
+@property (strong, nonatomic) NSString *repo;
+
 @end

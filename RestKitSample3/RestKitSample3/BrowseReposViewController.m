@@ -19,6 +19,8 @@
 
 @implementation BrowseReposViewController
 
+@synthesize loginInfo;
+
 - (RKObjectMapping *)mapping
 {
     if (objectMapping == nil) {
@@ -35,7 +37,8 @@
 
 - (void)fetchData
 {
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/users/peterfriese/repos" 
+    NSString *resourcePath = [NSString stringWithFormat:@"/users/%@/repos", loginInfo.login];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resourcePath 
                                                   objectMapping:[self mapping] 
                                                        delegate:self];
 }
@@ -120,6 +123,8 @@
     
     BrowseIssuesViewController *issuesViewController = [[BrowseIssuesViewController alloc] init];
     issuesViewController.repositoryUrl = repo.url;
+    issuesViewController.repo = repo.name;
+    issuesViewController.repouser = loginInfo.login;
     [self.navigationController pushViewController:issuesViewController animated:YES];
 }
 

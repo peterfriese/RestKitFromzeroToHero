@@ -16,14 +16,26 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize tabbarController;
+@synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    RKLogConfigureByName("RestKit", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/​Network", RKLogLevelDebug); 
+    RKLogConfigureByName("RestKit/​ObjectMapping", RKLogLevelDebug); 
+    RKLogConfigureByName("RestKit/​Network/Queue", RKLogLevelDebug); 
+    
+    RKLogSetAppLoggingLevel(RKLogLevelTrace);
+    
+    [RKClient clientWithBaseURL:@"https://api.github.com"];
+    [[RKClient sharedClient] setAuthenticationType:RKRequestAuthenticationTypeHTTPBasic];
+    
     [RKObjectManager objectManagerWithBaseURL:@"https://api.github.com"];
+    [[RKObjectManager sharedManager] setClient:[RKClient sharedClient]];
+    [[RKObjectManager sharedManager] setSerializationMIMEType:RKMIMETypeJSON];
     
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[GithubUser class]];
     [userMapping mapKeyPath:@"id" toAttribute:@"id"];
@@ -37,6 +49,8 @@
     [userMapping mapKeyPath:@"followers" toAttribute:@"followers"];
     [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:userMapping];
     
+    
+    // create mapping for GithubIssue
     RKObjectMapping *issueMapping = [RKObjectMapping mappingForClass:[GithubIssue class]];
     [issueMapping mapKeyPath:@"url" toAttribute:@"url"];
     [issueMapping mapKeyPath:@"number" toAttribute:@"number"];
@@ -44,7 +58,16 @@
     [issueMapping mapKeyPath:@"title" toAttribute:@"title"];
     [issueMapping mapKeyPath:@"body" toAttribute:@"body"];
     [issueMapping mapKeyPath:@"user" toRelationship:@"user" withMapping:userMapping];
-    [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:issueMapping];
+    
+    // add mapping for GithubIssue
+//    [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:issueMapping];
+    [[[RKObjectManager sharedManager] mappingProvider] setObjectMapping:issueMapping forKeyPath:@""];
+
+    // add serialization mapping and route for GithubIssue
+    RKObjectMapping *issueSerializationMapping = [issueMapping inverseMapping];
+    [[[RKObjectManager sharedManager] mappingProvider] setSerializationMapping:issueSerializationMapping forClass:[GithubIssue class]];
+    [[[RKObjectManager sharedManager] router] routeClass:[GithubIssue class] toResourcePath:@"/repos/:repouser/:repo/issues/:number"];
+    [[[RKObjectManager sharedManager] router] routeClass:[GithubIssue class] toResourcePath:@"/repos/:repouser/:repo/issues" forMethod:RKRequestMethodPOST ];
     
     RKObjectMapping *repoMapping = [RKObjectMapping mappingForClass:[GithubRepo class]];
     [repoMapping mapKeyPath:@"url" toAttribute:@"url"];
@@ -54,21 +77,33 @@
     [repoMapping mapKeyPath:@"open_issues" toAttribute:@"open_issues"];
     [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:repoMapping];
     
-    // Browse repos
-    BrowseReposViewController *browseViewController = [[BrowseReposViewController alloc] init];
-    UINavigationController *browseReposNavigationController = [[UINavigationController alloc] initWithRootViewController:browseViewController];
-    browseReposNavigationController.tabBarItem.title = @"Browse";
+    // Login
+    LoginController *loginController = [[LoginController alloc] init];
+    loginController.delegate = self;
+    navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
     
-    // Set up tab bar
-    tabbarController = [[UITabBarController alloc] init];
-    [tabbarController setViewControllers:[NSArray arrayWithObjects:
-                                          browseReposNavigationController, 
-                                          nil]];    
-    
-    [self.window addSubview:tabbarController.view];
+    [self.window addSubview:navigationController.view];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)performLogin:(LoginInfo *)loginInfo
+{
+    // Browse repos
+    BrowseReposViewController *browseViewController = [[BrowseReposViewController alloc] init];
+    browseViewController.loginInfo = loginInfo;
+    
+    [[[RKObjectManager sharedManager] client] setPassword:loginInfo.password];
+    [[[RKObjectManager sharedManager] client] setUsername:loginInfo.login];
+    
+    // Set up tab bar
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    [tabbarController setViewControllers:[NSArray arrayWithObjects:
+                                          browseViewController, 
+                                          nil]];
+    
+    [navigationController pushViewController:tabbarController animated:YES];
 }
 
 @end

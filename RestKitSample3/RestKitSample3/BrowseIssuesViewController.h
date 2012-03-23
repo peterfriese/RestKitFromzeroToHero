@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) NSString *repositoryUrl;
 
+@property (strong, nonatomic) NSString *repouser;
+@property (strong, nonatomic) NSString *repo;
+
 @end

@@ -28,6 +28,10 @@
 		885A52F6151A8B1400703B73 /* GithubIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52EF151A8B1400703B73 /* GithubIssue.m */; };
 		885A52F7151A8B1400703B73 /* GithubRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52F1151A8B1400703B73 /* GithubRepo.m */; };
 		885A52F8151A8B1400703B73 /* GithubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A52F3151A8B1400703B73 /* GithubUser.m */; };
+		889C5143151C7E9200761732 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 889C5140151C7E3D00761732 /* libQuickDialog.a */; };
+		889C514F151C7FA000761732 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C514E151C7FA000761732 /* LoginController.m */; };
+		889C5152151C7FF800761732 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C5151151C7FF800761732 /* LoginInfo.m */; };
+		889C5158151C8D0000761732 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C5157151C8D0000761732 /* AddIssueViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,27 @@
 			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
 		};
+		889C513D151C7E3D00761732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D80B0E3313E052DF00FA85CA;
+			remoteInfo = QuickDialogExample;
+		};
+		889C513F151C7E3D00761732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C542393145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+		889C5141151C7E8D00761732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C542392145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +124,13 @@
 		885A52F1151A8B1400703B73 /* GithubRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepo.m; sourceTree = "<group>"; };
 		885A52F2151A8B1400703B73 /* GithubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubUser.h; sourceTree = "<group>"; };
 		885A52F3151A8B1400703B73 /* GithubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubUser.m; sourceTree = "<group>"; };
+		889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = ../Frameworks/QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
+		889C514D151C7FA000761732 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		889C514E151C7FA000761732 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		889C5150151C7FF800761732 /* LoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfo.h; sourceTree = "<group>"; };
+		889C5151151C7FF800761732 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
+		889C5156151C8D0000761732 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
+		889C5157151C8D0000761732 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889C5143151C7E9200761732 /* libQuickDialog.a in Frameworks */,
 				885A52C3151A8A3400703B73 /* CFNetwork.framework in Frameworks */,
 				885A52C4151A8A3400703B73 /* CoreData.framework in Frameworks */,
 				885A52C5151A8A3400703B73 /* CoreLocation.framework in Frameworks */,
@@ -128,6 +161,7 @@
 		885A527F151A89AD00703B73 = {
 			isa = PBXGroup;
 			children = (
+				889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */,
 				885A52A5151A89C500703B73 /* RestKit.xcodeproj */,
 				885A5294151A89AE00703B73 /* RestKitSample3 */,
 				885A528D151A89AE00703B73 /* Frameworks */,
@@ -165,18 +199,13 @@
 		885A5294151A89AE00703B73 /* RestKitSample3 */ = {
 			isa = PBXGroup;
 			children = (
-				885A529D151A89AE00703B73 /* AppDelegate.h */,
-				885A529E151A89AE00703B73 /* AppDelegate.m */,
-				885A52EA151A8B1300703B73 /* BrowseIssuesViewController.h */,
-				885A52EB151A8B1300703B73 /* BrowseIssuesViewController.m */,
-				885A52EC151A8B1300703B73 /* BrowseReposViewController.h */,
-				885A52ED151A8B1400703B73 /* BrowseReposViewController.m */,
-				885A52EE151A8B1400703B73 /* GithubIssue.h */,
-				885A52EF151A8B1400703B73 /* GithubIssue.m */,
-				885A52F0151A8B1400703B73 /* GithubRepo.h */,
-				885A52F1151A8B1400703B73 /* GithubRepo.m */,
+				889C5153151C8BC900761732 /* Login */,
+				889C5154151C8BDE00761732 /* Browse Repo */,
+				889C5155151C8BEF00761732 /* Browse Issues */,
 				885A52F2151A8B1400703B73 /* GithubUser.h */,
 				885A52F3151A8B1400703B73 /* GithubUser.m */,
+				885A529D151A89AE00703B73 /* AppDelegate.h */,
+				885A529E151A89AE00703B73 /* AppDelegate.m */,
 				885A5295151A89AE00703B73 /* Supporting Files */,
 			);
 			path = RestKitSample3;
@@ -204,6 +233,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		889C5135151C7E3D00761732 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				889C513E151C7E3D00761732 /* QuickDialogExample.app */,
+				889C5140151C7E3D00761732 /* libQuickDialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		889C5153151C8BC900761732 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				889C5150151C7FF800761732 /* LoginInfo.h */,
+				889C5151151C7FF800761732 /* LoginInfo.m */,
+				889C514D151C7FA000761732 /* LoginController.h */,
+				889C514E151C7FA000761732 /* LoginController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		889C5154151C8BDE00761732 /* Browse Repo */ = {
+			isa = PBXGroup;
+			children = (
+				885A52EC151A8B1300703B73 /* BrowseReposViewController.h */,
+				885A52ED151A8B1400703B73 /* BrowseReposViewController.m */,
+				885A52F0151A8B1400703B73 /* GithubRepo.h */,
+				885A52F1151A8B1400703B73 /* GithubRepo.m */,
+			);
+			name = "Browse Repo";
+			sourceTree = "<group>";
+		};
+		889C5155151C8BEF00761732 /* Browse Issues */ = {
+			isa = PBXGroup;
+			children = (
+				885A52EA151A8B1300703B73 /* BrowseIssuesViewController.h */,
+				885A52EB151A8B1300703B73 /* BrowseIssuesViewController.m */,
+				885A52EE151A8B1400703B73 /* GithubIssue.h */,
+				885A52EF151A8B1400703B73 /* GithubIssue.m */,
+				889C5156151C8D0000761732 /* AddIssueViewController.h */,
+				889C5157151C8D0000761732 /* AddIssueViewController.m */,
+			);
+			name = "Browse Issues";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +291,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				889C5142151C7E8D00761732 /* PBXTargetDependency */,
 				885A52B8151A8A0200703B73 /* PBXTargetDependency */,
 			);
 			name = RestKitSample3;
@@ -244,6 +318,10 @@
 			productRefGroup = 885A528B151A89AE00703B73 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 889C5135151C7E3D00761732 /* Products */;
+					ProjectRef = 889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */;
+				},
 				{
 					ProductGroup = 885A52A6151A89C500703B73 /* Products */;
 					ProjectRef = 885A52A5151A89C500703B73 /* RestKit.xcodeproj */;
@@ -285,6 +363,20 @@
 			remoteRef = 885A52B5151A89C500703B73 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		889C513E151C7E3D00761732 /* QuickDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QuickDialogExample.app;
+			remoteRef = 889C513D151C7E3D00761732 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		889C5140151C7E3D00761732 /* libQuickDialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQuickDialog.a;
+			remoteRef = 889C513F151C7E3D00761732 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -310,6 +402,9 @@
 				885A52F6151A8B1400703B73 /* GithubIssue.m in Sources */,
 				885A52F7151A8B1400703B73 /* GithubRepo.m in Sources */,
 				885A52F8151A8B1400703B73 /* GithubUser.m in Sources */,
+				889C514F151C7FA000761732 /* LoginController.m in Sources */,
+				889C5152151C7FF800761732 /* LoginInfo.m in Sources */,
+				889C5158151C8D0000761732 /* AddIssueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +415,11 @@
 			isa = PBXTargetDependency;
 			name = RestKit;
 			targetProxy = 885A52B7151A8A0200703B73 /* PBXContainerItemProxy */;
+		};
+		889C5142151C7E8D00761732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QuickDialog;
+			targetProxy = 889C5141151C7E8D00761732 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -383,15 +483,20 @@
 		885A52A3151A89AE00703B73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (GB8JX7TGVR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RestKitSample3/RestKitSample3-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../Frameworks/RestKit/build";
+				HEADER_SEARCH_PATHS = (
+					"\"${SOURCE_ROOT}/../Frameworks/RestKit/build\"",
+					"\"${SOURCE_ROOT}/../Frameworks/QuickDialog\"",
+				);
 				INFOPLIST_FILE = "RestKitSample3/RestKitSample3-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "588E15C9-2FFF-4323-83C3-18931D865D2D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -399,15 +504,20 @@
 		885A52A4151A89AE00703B73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (GB8JX7TGVR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RestKitSample3/RestKitSample3-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../Frameworks/RestKit/build";
+				HEADER_SEARCH_PATHS = (
+					"\"${SOURCE_ROOT}/../Frameworks/RestKit/build\"",
+					"\"${SOURCE_ROOT}/../Frameworks/QuickDialog\"",
+				);
 				INFOPLIST_FILE = "RestKitSample3/RestKitSample3-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "588E15C9-2FFF-4323-83C3-18931D865D2D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -431,6 +541,7 @@
 				885A52A4151A89AE00703B73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

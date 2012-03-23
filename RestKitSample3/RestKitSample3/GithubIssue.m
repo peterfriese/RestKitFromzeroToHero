@@ -26,4 +26,7 @@
 @synthesize created_at;
 @synthesize updated_at;
 
+@synthesize repouser;
+@synthesize repo;
+
 @end

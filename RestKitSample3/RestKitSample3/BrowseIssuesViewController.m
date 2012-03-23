@@ -8,6 +8,7 @@
 
 #import "BrowseIssuesViewController.h"
 #import "GithubIssue.h"
+#import "AddIssueViewController.h"
 
 @interface BrowseIssuesViewController ()
 {
@@ -18,6 +19,8 @@
 @implementation BrowseIssuesViewController
 
 @synthesize repositoryUrl;
+@synthesize repouser;
+@synthesize repo;
 
 - (NSString *)resourcePath
 {
@@ -28,11 +31,6 @@
 {
     RKObjectMapping *mapping = [[[RKObjectManager sharedManager] mappingProvider] objectMappingForClass:[GithubIssue class]];
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[self resourcePath] objectMapping:mapping delegate:self];
-    
-    
-//    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[self resourcePath]
-//                                                 objectMapping:[self mapping] 
-//                                                      delegate:self];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
@@ -45,7 +43,6 @@
 {
     NSLog(@"Encountered an error: %@", error);
 }
-
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -66,6 +63,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // "Add Issue" button
+    UIBarButtonItem *addIssueButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onAddIssue)];
+    self.navigationItem.rightBarButtonItem = addIssueButton;
+    
     [self fetchData];
 }
 
@@ -116,5 +118,19 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+#pragma mark - Add issue button
+
+- (void)onAddIssue
+{
+    AddIssueViewController *addIssueViewController = [[AddIssueViewController alloc] init];
+    addIssueViewController.repouser = repouser;
+    addIssueViewController.repo = repo;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addIssueViewController];
+    [self presentModalViewController:navigationController animated:YES];
+}
+
+// TODO: reload data after adding issue!
 
 @end
