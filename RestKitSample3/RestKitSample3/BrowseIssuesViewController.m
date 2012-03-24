@@ -101,7 +101,8 @@
     // Configure the cell...
     GithubIssue *issue = (GithubIssue *)[issues objectAtIndex:[indexPath row]];
     cell.textLabel.text = issue.title;
-    cell.detailTextLabel.text = issue.user.login;
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Created by %@ on %@", issue.user.login, issue.createdAtDate];
     
     return cell;
 }

@@ -22,11 +22,19 @@
 //@synthesize milestone;
 @synthesize comments;
 // @synthesize pull_request;
-@synthesize closed_at;
-@synthesize created_at;
-@synthesize updated_at;
+@synthesize closedAt;
+@synthesize createdAt;
+@synthesize updatedAt;
 
 @synthesize repouser;
 @synthesize repo;
+
+- (NSString *)createdAtDate
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyy-MM-dd"];
+    NSString *string = [formatter stringFromDate:self.createdAt];
+    return string;
+}
 
 @end

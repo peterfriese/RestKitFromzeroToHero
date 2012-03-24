@@ -23,11 +23,15 @@
 //@property (strong, nonatomic) GithubMilestone *milestone;
 @property (strong, nonatomic) NSNumber *comments;
 // @property (strong, nonatomic) GithubPullRequest *pull_request;
-@property (strong, nonatomic) NSDate *closed_at;
-@property (strong, nonatomic) NSDate *created_at;
-@property (strong, nonatomic) NSDate *updated_at;
+@property (strong, nonatomic) NSDate *closedAt;
+@property (strong, nonatomic) NSDate *createdAt;
+@property (strong, nonatomic) NSDate *updatedAt;
 
+
+// these are only used in order to construct the resource path, they won't be stored anywhere:
 @property (strong, nonatomic) NSString *repouser;
 @property (strong, nonatomic) NSString *repo;
+
+- (NSString *)createdAtDate;
 
 @end
