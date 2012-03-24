@@ -23,12 +23,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    RKLogConfigureByName("RestKit", RKLogLevelTrace);
-    RKLogConfigureByName("RestKit/​Network", RKLogLevelDebug); 
-    RKLogConfigureByName("RestKit/​ObjectMapping", RKLogLevelDebug); 
-    RKLogConfigureByName("RestKit/​Network/Queue", RKLogLevelDebug); 
+//    RKLogConfigureByName("RestKit", RKLogLevelTrace);
+//    RKLogConfigureByName("RestKit/​Network", RKLogLevelDebug); 
+//    RKLogConfigureByName("RestKit/​ObjectMapping", RKLogLevelDebug); 
+//    RKLogConfigureByName("RestKit/​Network/Queue", RKLogLevelDebug); 
     
-    RKLogSetAppLoggingLevel(RKLogLevelTrace);
+//    RKLogSetAppLoggingLevel(RKLogLevelTrace);
     
     [RKClient clientWithBaseURL:@"https://api.github.com"];
     [[RKClient sharedClient] setAuthenticationType:RKRequestAuthenticationTypeHTTPBasic];
@@ -36,6 +36,7 @@
     [RKObjectManager objectManagerWithBaseURL:@"https://api.github.com"];
     [[RKObjectManager sharedManager] setClient:[RKClient sharedClient]];
     [[RKObjectManager sharedManager] setSerializationMIMEType:RKMIMETypeJSON];
+    [[RKObjectManager sharedManager] setAcceptMIMEType:RKMIMETypeJSON];
     
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[GithubUser class]];
     [userMapping mapKeyPath:@"id" toAttribute:@"id"];
@@ -48,6 +49,7 @@
     [userMapping mapKeyPath:@"following" toAttribute:@"following"];   
     [userMapping mapKeyPath:@"followers" toAttribute:@"followers"];
     [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:userMapping];
+    [[[RKObjectManager sharedManager] mappingProvider] setMapping:userMapping forKeyPath:@""]; // <-- just to check if we can register more than one class per path.
     
     
     // create mapping for GithubIssue
@@ -57,6 +59,7 @@
     [issueMapping mapKeyPath:@"state" toAttribute:@"state"];
     [issueMapping mapKeyPath:@"title" toAttribute:@"title"];
     [issueMapping mapKeyPath:@"body" toAttribute:@"body"];
+    [issueMapping mapKeyPath:@"created_at" toAttribute:@"createdAt"];
     [issueMapping mapKeyPath:@"user" toRelationship:@"user" withMapping:userMapping];
     
     // add mapping for GithubIssue
