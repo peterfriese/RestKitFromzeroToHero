@@ -18,22 +18,6 @@
 @synthesize window = _window;
 @synthesize navigationController;
 
-- (void)reachabilityDidChange:(NSNotification *)notification 
-{
-    RKReachabilityObserver* observer = (RKReachabilityObserver *) [notification object];
-    RKReachabilityNetworkStatus status = [observer networkStatus];
-    if (RKReachabilityNotReachable == status) {
-        RKLogInfo(@"No network access!");
-    }
-    else if (RKReachabilityReachableViaWiFi == status) {
-        RKLogInfo(@"Online via WiFi!");
-    } 
-    else if (RKReachabilityReachableViaWWAN == status) {
-        RKLogInfo(@"Online via Edge or 3G!");
-    }
-}     
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -123,20 +107,13 @@
 - (void)performLogin:(LoginInfo *)loginInfo
 {
     // Browse repos
-    BrowseReposViewController *browseViewController = [[BrowseReposViewController alloc] init];
-    browseViewController.loginInfo = loginInfo;
+    BrowseReposViewController *browseReposViewController = [[BrowseReposViewController alloc] init];
+    browseReposViewController.loginInfo = loginInfo;
 
     [[[RKObjectManager sharedManager] client] setPassword:loginInfo.password];
     [[[RKObjectManager sharedManager] client] setUsername:loginInfo.login];
 
-    // Set up tab bar
-    UITabBarController *tabbarController = [[UITabBarController alloc] init];
-    tabbarController.title = @"Repositories";
-    [tabbarController setViewControllers:[NSArray arrayWithObjects:
-                                          browseViewController,
-                                          nil]];
-
-    [navigationController pushViewController:tabbarController animated:YES];
+    [navigationController pushViewController:browseReposViewController animated:YES];
 }
 
 @end
