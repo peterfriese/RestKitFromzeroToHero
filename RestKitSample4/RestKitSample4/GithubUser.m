@@ -10,14 +10,14 @@
 
 @implementation GithubUser
 
-@synthesize id;
-@synthesize login;
-@synthesize name;
-@synthesize company;
-@synthesize location;
-@synthesize blog;
-@synthesize following;
-@synthesize followers;
-@synthesize email;
+@dynamic id;
+@dynamic login;
+@dynamic name;
+@dynamic company;
+@dynamic location;
+@dynamic blog;
+@dynamic following;
+@dynamic followers;
+@dynamic email;
 
 @end

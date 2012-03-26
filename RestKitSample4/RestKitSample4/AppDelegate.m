@@ -3,7 +3,7 @@
 //  RestKitSample4
 //
 //  Created by Peter Friese on 21.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 peterfriese.de. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -18,34 +18,62 @@
 @synthesize window = _window;
 @synthesize navigationController;
 
+- (void)reachabilityDidChange:(NSNotification *)notification 
+{
+    RKReachabilityObserver* observer = (RKReachabilityObserver *) [notification object];
+    RKReachabilityNetworkStatus status = [observer networkStatus];
+    if (RKReachabilityNotReachable == status) {
+        RKLogInfo(@"No network access!");
+    }
+    else if (RKReachabilityReachableViaWiFi == status) {
+        RKLogInfo(@"Online via WiFi!");
+    } 
+    else if (RKReachabilityReachableViaWWAN == status) {
+        RKLogInfo(@"Online via Edge or 3G!");
+    }
+}     
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
 
-//    RKLogConfigureByName("RestKit", RKLogLevelTrace);
-//    RKLogConfigureByName("RestKit/​Network", RKLogLevelDebug);
-//    RKLogConfigureByName("RestKit/​ObjectMapping", RKLogLevelDebug);
-//    RKLogConfigureByName("RestKit/​Network/Queue", RKLogLevelDebug);
+    if (NO) {
+        RKLogConfigureByName("RestKit", RKLogLevelTrace);
+        RKLogConfigureByName("RestKit/​Network", RKLogLevelDebug);
+        RKLogConfigureByName("RestKit/​ObjectMapping", RKLogLevelDebug);
+        RKLogConfigureByName("RestKit/​Network/Queue", RKLogLevelDebug);
+        RKLogSetAppLoggingLevel(RKLogLevelTrace);        
+    }
 
-//    RKLogSetAppLoggingLevel(RKLogLevelTrace);
+    // set up object manager
+    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:@"https://api.github.com"];
+    
+    // we want to send and receive JSON
+    objectManager.serializationMIMEType = RKMIMETypeJSON;
+    objectManager.acceptMIMEType = RKMIMETypeJSON;
+    
+    // use basic HTTP authentication for the time being
+    objectManager.client.authenticationType = RKRequestAuthenticationTypeHTTPBasic;
+    
+    // show network indicator in status bar
+    objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+    
+    
+    // set up backing data store
+    objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"gihub.sqlite"];
+//    objectManager.objectStore.managedObjectCache = [[GithubManagedObjectCache alloc] init];
 
-    [RKClient clientWithBaseURL:@"https://api.github.com"];
-    [[RKClient sharedClient] setAuthenticationType:RKRequestAuthenticationTypeHTTPBasic];
-
-    [RKObjectManager objectManagerWithBaseURL:@"https://api.github.com"];
-    [[RKObjectManager sharedManager] setClient:[RKClient sharedClient]];
-    [[RKObjectManager sharedManager] setSerializationMIMEType:RKMIMETypeJSON];
-    [[RKObjectManager sharedManager] setAcceptMIMEType:RKMIMETypeJSON];
-
-    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[GithubUser class]];
+    
+    RKManagedObjectMapping *userMapping = [RKManagedObjectMapping mappingForClass:[GithubUser class]];
+    userMapping.primaryKeyAttribute = @"id";
     [userMapping mapKeyPath:@"id" toAttribute:@"id"];
     [userMapping mapKeyPath:@"login" toAttribute:@"login"];
     [userMapping mapKeyPath:@"name" toAttribute:@"name"];
     [userMapping mapKeyPath:@"company" toAttribute:@"company"];
     [userMapping mapKeyPath:@"location" toAttribute:@"location"];
     [userMapping mapKeyPath:@"blog" toAttribute:@"blog"];
-    //        [objectMapping mapKeyPath:@"user.email" toAttribute:@"email"];
+    [userMapping mapKeyPath:@"email" toAttribute:@"email"];
     [userMapping mapKeyPath:@"following" toAttribute:@"following"];
     [userMapping mapKeyPath:@"followers" toAttribute:@"followers"];
     [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:userMapping];
@@ -53,7 +81,8 @@
 
 
     // create mapping for GithubIssue
-    RKObjectMapping *issueMapping = [RKObjectMapping mappingForClass:[GithubIssue class]];
+    RKManagedObjectMapping *issueMapping = [RKManagedObjectMapping mappingForClass:[GithubIssue class]];
+    issueMapping.primaryKeyAttribute = @"url";
     [issueMapping mapKeyPath:@"url" toAttribute:@"url"];
     [issueMapping mapKeyPath:@"number" toAttribute:@"number"];
     [issueMapping mapKeyPath:@"state" toAttribute:@"state"];
@@ -63,7 +92,6 @@
     [issueMapping mapKeyPath:@"user" toRelationship:@"user" withMapping:userMapping];
 
     // add mapping for GithubIssue
-//    [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:issueMapping];
     [[[RKObjectManager sharedManager] mappingProvider] setObjectMapping:issueMapping forKeyPath:@""];
 
     // add serialization mapping and route for GithubIssue
@@ -72,12 +100,13 @@
     [[[RKObjectManager sharedManager] router] routeClass:[GithubIssue class] toResourcePath:@"/repos/:repouser/:repo/issues/:number"];
     [[[RKObjectManager sharedManager] router] routeClass:[GithubIssue class] toResourcePath:@"/repos/:repouser/:repo/issues" forMethod:RKRequestMethodPOST ];
 
-    RKObjectMapping *repoMapping = [RKObjectMapping mappingForClass:[GithubRepo class]];
+    RKManagedObjectMapping *repoMapping = [RKManagedObjectMapping mappingForClass:[GithubRepo class]];
+    repoMapping.primaryKeyAttribute = @"url";
     [repoMapping mapKeyPath:@"url" toAttribute:@"url"];
     [repoMapping mapKeyPath:@"name" toAttribute:@"name"];
-    [repoMapping mapKeyPath:@"description" toAttribute:@"description"];
+    [repoMapping mapKeyPath:@"description" toAttribute:@"descr"];
     [repoMapping mapKeyPath:@"private" toAttribute:@"private"];
-    [repoMapping mapKeyPath:@"open_issues" toAttribute:@"open_issues"];
+    [repoMapping mapKeyPath:@"open_issues" toAttribute:@"openIssues"];
     [[[RKObjectManager sharedManager] mappingProvider] addObjectMapping:repoMapping];
 
     // Login
@@ -102,6 +131,7 @@
 
     // Set up tab bar
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    tabbarController.title = @"Repositories";
     [tabbarController setViewControllers:[NSArray arrayWithObjects:
                                           browseViewController,
                                           nil]];

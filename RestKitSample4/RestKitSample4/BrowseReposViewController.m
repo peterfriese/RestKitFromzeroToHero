@@ -21,26 +21,52 @@
 
 @synthesize loginInfo;
 
-- (RKObjectMapping *)mapping
-{
-    if (objectMapping == nil) {
-        // define mapping from JSON data structure to object structure
-        objectMapping = [RKObjectMapping mappingForClass:[GithubRepo class]];
-        [objectMapping mapKeyPath:@"url" toAttribute:@"url"];
-        [objectMapping mapKeyPath:@"name" toAttribute:@"name"];
-        [objectMapping mapKeyPath:@"description" toAttribute:@"description"];
-        [objectMapping mapKeyPath:@"private" toAttribute:@"private"];
-        [objectMapping mapKeyPath:@"open_issues" toAttribute:@"open_issues"];
-    }
-    return objectMapping;    
-}
-
 - (void)fetchData
 {
+    if ([[RKObjectManager sharedManager] isOnline]) {
+        [self fetchDataFromRemote];
+    }
+    else {
+        [self fetchDataFromDataStore];
+    }
+}
+
+- (void)fetchDataFromDataStore
+{
+    repos = [GithubRepo allObjects];
+    [self.tableView reloadData];    
+}
+
+- (void)fetchDataFromRemote
+{
+    RKObjectMapping *mapping = [[[RKObjectManager sharedManager] mappingProvider] objectMappingForClass:[GithubRepo class]];
     NSString *resourcePath = [NSString stringWithFormat:@"/users/%@/repos", loginInfo.login];
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resourcePath 
-                                                  objectMapping:[self mapping] 
-                                                       delegate:self];
+                                                  objectMapping:mapping
+                                                       delegate:self];    
+}
+
+- (void)reachabilityChanged:(NSNotification*)notification {
+    RKReachabilityObserver* observer = (RKReachabilityObserver*)[notification object];
+    
+    if ([observer isNetworkReachable]) {
+        if (![self.view isHidden]) {
+            [self fetchDataFromRemote];            
+        }
+    } 
+    else {
+        if (![self.view isHidden]) {
+            [self fetchDataFromDataStore];
+        }
+    }
+}
+
+- (void)registerForReachability
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name:RKReachabilityDidChangeNotification
+                                               object:nil];    
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
@@ -78,6 +104,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self registerForReachability];
 }
 
 - (void)viewDidUnload
@@ -110,7 +138,7 @@
     // Configure the cell...
     GithubRepo *repo = (GithubRepo *)[repos objectAtIndex:[indexPath row]];
     cell.textLabel.text = repo.name;
-    cell.detailTextLabel.text = repo.open_issues;
+    cell.detailTextLabel.text = repo.openIssues;
     
     return cell;
 }

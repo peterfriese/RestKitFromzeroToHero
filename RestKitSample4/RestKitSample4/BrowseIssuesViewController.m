@@ -50,6 +50,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.title = @"Issues";
     }
     return self;
 }
@@ -127,11 +128,13 @@
     AddIssueViewController *addIssueViewController = [[AddIssueViewController alloc] init];
     addIssueViewController.repouser = repouser;
     addIssueViewController.repo = repo;
+    addIssueViewController.delegate = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addIssueViewController];
     [self presentModalViewController:navigationController animated:YES];
 }
 
-// TODO: reload data after adding issue!
-
+-(void)didAddIssue:(GithubIssue *)issue{
+    [self fetchData];
+}
 @end

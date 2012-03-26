@@ -10,25 +10,25 @@
 
 @implementation GithubRepo
 
-@synthesize url;
-@synthesize html_url;
-@synthesize clone_url;
-@synthesize git_url;
-@synthesize ssh_url;
-@synthesize svn_url;
-@synthesize owner;
-@synthesize name;
-@synthesize description;
-@synthesize homepage;
-@synthesize language;
-@synthesize private;
-@synthesize fork;
-@synthesize forks;
-@synthesize watchers;
-@synthesize size;
-@synthesize master_branch;
-@synthesize open_issues;
-@synthesize pushed_at;
-@synthesize created_at;
+@dynamic url;
+@dynamic htmlUrl;
+@dynamic cloneUrl;
+@dynamic gitUrl;
+@dynamic sshUrl;
+@dynamic svnUrl;
+@dynamic owner;
+@dynamic name;
+@dynamic descr;
+@dynamic homepage;
+@dynamic language;
+@dynamic private;
+@dynamic fork;
+@dynamic forks;
+@dynamic watchers;
+@dynamic size;
+@dynamic masterBranch;
+@dynamic openIssues;
+@dynamic pushedAt;
+@dynamic createdAt;
 
 @end

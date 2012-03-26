@@ -3,7 +3,7 @@
 //  RestKitSample4
 //
 //  Created by Peter Friese on 21.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 peterfriese.de. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

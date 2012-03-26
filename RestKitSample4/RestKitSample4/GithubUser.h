@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GithubUser : NSObject
+@interface GithubUser : NSManagedObject
 
 @property (strong, nonatomic) NSNumber *id;
 @property (strong, nonatomic) NSString *login;

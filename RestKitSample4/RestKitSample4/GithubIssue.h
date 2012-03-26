@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "GithubUser.h"
 
-@interface GithubIssue : NSObject
+@interface GithubIssue : NSManagedObject
 
 @property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) NSString *html_url;
+@property (strong, nonatomic) NSString *htmlUrl;
 @property (strong, nonatomic) NSNumber *number;
 @property (strong, nonatomic) NSString *state;
 @property (strong, nonatomic) NSString *title;

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddIssueViewController.h"
 
-@interface BrowseIssuesViewController : UITableViewController<RKObjectLoaderDelegate>
+@interface BrowseIssuesViewController : UITableViewController<RKObjectLoaderDelegate, AddIssueViewControllerDelegate>
 
 @property (strong, nonatomic) NSString *repositoryUrl;
 

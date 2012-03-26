@@ -3,7 +3,7 @@
 //  RestKitSample4
 //
 //  Created by Peter Friese on 23.03.12.
-//  Copyright (c) 2012 Zühlke Group. All rights reserved.
+//  Copyright (c) 2012 peterfriese.de. All rights reserved.
 //
 
 #import "AddIssueViewController.h"
@@ -19,10 +19,24 @@
 
 @synthesize repouser;
 @synthesize repo;
+@synthesize delegate;
 
 -(id)init
 {
     self = [super initWithRoot:[self createForm]];
+
+    // cancel button
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+                                                                                  target:self 
+                                                                                  action:@selector(onCancel)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    // done button
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
+                                                                                  target:self 
+                                                                                  action:@selector(onAddIssue:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
     return self;
 }
 
@@ -45,10 +59,16 @@
     }
 }
 
+- (void)onCancel
+{
+    // dismiss dialog
+    [self dismissModalViewControllerAnimated:YES];    
+}
+
 - (void)onAddIssue:(QButtonElement *)buttonElement
 {
     // fill in information from UI:
-    GithubIssue *issue = [[GithubIssue alloc] init];
+    GithubIssue *issue = [GithubIssue object];
     [self.root fetchValueIntoObject:issue];
 
     // set username and repository, so the RestKit router can fill in this information in the resource URL:
@@ -58,6 +78,13 @@
     // post object to server:
     [[RKObjectManager sharedManager] postObject:issue delegate:self];
 
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object
+{
+    if (self.delegate) {
+        [delegate didAddIssue:object];
+    }
 }
 
 - (void)objectLoaderDidFinishLoading:(RKObjectLoader *)objectLoader

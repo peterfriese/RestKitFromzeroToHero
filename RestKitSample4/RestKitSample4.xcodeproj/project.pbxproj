@@ -32,6 +32,7 @@
 		889C514F151C7FA000761732 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C514E151C7FA000761732 /* LoginController.m */; };
 		889C5152151C7FF800761732 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C5151151C7FF800761732 /* LoginInfo.m */; };
 		889C5158151C8D0000761732 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C5157151C8D0000761732 /* AddIssueViewController.m */; };
+		88F92B09151E13560073F142 /* GithubModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88F92B07151E13560073F142 /* GithubModel.xcdatamodeld */; };
 		88FFA5F21520476D00CA4E76 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FFA5F01520476D00CA4E76 /* Icon.png */; };
 		88FFA5F31520476D00CA4E76 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FFA5F11520476D00CA4E76 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
@@ -133,8 +134,7 @@
 		889C5151151C7FF800761732 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
 		889C5156151C8D0000761732 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
 		889C5157151C8D0000761732 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
-		88F92A50151D398D0073F142 /* Restkit Logo-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restkit Logo-57X57.png"; sourceTree = "<group>"; };
-		88F92A52151D399F0073F142 /* RestKit_Logo_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RestKit_Logo_114x114.png; sourceTree = "<group>"; };
+		88F92B08151E13560073F142 /* GithubModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubModel.xcdatamodel; sourceTree = "<group>"; };
 		88FFA5F01520476D00CA4E76 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		88FFA5F11520476D00CA4E76 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +171,7 @@
 				889C5134151C7E3D00761732 /* QuickDialog.xcodeproj */,
 				885A5294151A89AE00703B73 /* RestKitSample4 */,
 				88F92A47151D32740073F142 /* Resources */,
+				88F92B01151E12480073F142 /* Model */,
 				885A528D151A89AE00703B73 /* Frameworks */,
 				885A528B151A89AE00703B73 /* Products */,
 			);
@@ -292,6 +293,15 @@
 			);
 			name = Resources;
 			path = RestKitSample4/Resources;
+			sourceTree = "<group>";
+		};
+		88F92B01151E12480073F142 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88F92B07151E13560073F142 /* GithubModel.xcdatamodeld */,
+			);
+			name = Model;
+			path = RestKitSample4/Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +434,7 @@
 				889C514F151C7FA000761732 /* LoginController.m in Sources */,
 				889C5152151C7FF800761732 /* LoginInfo.m in Sources */,
 				889C5158151C8D0000761732 /* AddIssueViewController.m in Sources */,
+				88F92B09151E13560073F142 /* GithubModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		88F92B07151E13560073F142 /* GithubModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88F92B08151E13560073F142 /* GithubModel.xcdatamodel */,
+			);
+			currentVersion = 88F92B08151E13560073F142 /* GithubModel.xcdatamodel */;
+			path = GithubModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 885A5281151A89AD00703B73 /* Project object */;
 }

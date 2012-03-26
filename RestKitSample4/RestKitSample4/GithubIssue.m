@@ -10,21 +10,21 @@
 
 @implementation GithubIssue
 
-@synthesize url;
-@synthesize html_url;
-@synthesize number;
-@synthesize state;
-@synthesize title;
-@synthesize body;
-@synthesize user;
-@synthesize labels;
+@dynamic url;
+@dynamic htmlUrl;
+@dynamic number;
+@dynamic state;
+@dynamic title;
+@dynamic body;
+@dynamic user;
+@dynamic labels;
 @synthesize assignee;
-//@synthesize milestone;
-@synthesize comments;
-// @synthesize pull_request;
-@synthesize closedAt;
-@synthesize createdAt;
-@synthesize updatedAt;
+//@dynamic milestone;
+@dynamic comments;
+// @dynamic pull_request;
+@dynamic closedAt;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 @synthesize repouser;
 @synthesize repo;
