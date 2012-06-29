@@ -46,9 +46,9 @@
     
     // set up backing data store
     objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"gihub.sqlite"];
-//    objectManager.objectStore.managedObjectCache = [[GithubManagedObjectCache alloc] init];
-
     
+    
+    // TODO: extract maaping to mappingprovider?
     RKManagedObjectMapping *userMapping = [RKManagedObjectMapping mappingForClass:[GithubUser class]];
     userMapping.primaryKeyAttribute = @"id";
     [userMapping mapKeyPath:@"id" toAttribute:@"id"];

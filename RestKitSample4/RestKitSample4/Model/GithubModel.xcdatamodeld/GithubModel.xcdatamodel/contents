@@ -49,8 +49,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GithubUser" positionX="-308" positionY="-864" width="128" height="180"/>
-        <element name="GithubRepo" positionX="-621" positionY="-990" width="128" height="345"/>
-        <element name="GithubIssue" positionX="-9" positionY="-918" width="128" height="240"/>
+        <element name="GithubIssue" positionX="142" positionY="-1179" width="128" height="240"/>
+        <element name="GithubRepo" positionX="-578" positionY="-990" width="128" height="345"/>
+        <element name="GithubUser" positionX="-324" positionY="-927" width="128" height="180"/>
     </elements>
 </model>

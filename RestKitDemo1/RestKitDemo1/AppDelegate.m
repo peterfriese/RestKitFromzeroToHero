@@ -15,8 +15,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [RKClient clientWithBaseURL:@"http://github.org"];
+    // create client
+    RKClient *client = [RKClient clientWithBaseURL:@"http://github.org"];
     
+    // send this field with each request
+    [client setValue:[[UIDevice currentDevice] uniqueIdentifier] forHTTPHeaderField:@"UDID"];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     

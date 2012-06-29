@@ -22,7 +22,7 @@
 
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response
 {
-    if ([response isOK]) {
+    if ([response isSuccessful]) {
         UIImage *image = [UIImage imageWithData:[response body]];
         self.imageView.image = image;
     }

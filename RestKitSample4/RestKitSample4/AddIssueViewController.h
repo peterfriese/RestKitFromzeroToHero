@@ -16,6 +16,8 @@
 
 @interface AddIssueViewController : QuickDialogController<QuickDialogStyleProvider, RKObjectLoaderDelegate>
 
+@property (strong, nonatomic) GithubIssue *issue;
+
 @property (strong, nonatomic) NSString *repouser;
 @property (strong, nonatomic) NSString *repo;
 

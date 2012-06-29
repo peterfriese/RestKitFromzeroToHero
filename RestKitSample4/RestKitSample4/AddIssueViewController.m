@@ -17,6 +17,7 @@
 
 @implementation AddIssueViewController
 
+@synthesize issue;
 @synthesize repouser;
 @synthesize repo;
 @synthesize delegate;
@@ -40,6 +41,12 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (issue != nil) {
+        [self.root bindToObject:issue];
+    }    
+}
 
 - (void)setQuickDialogTableView:(QuickDialogTableView *)aQuickDialogTableView
 {
@@ -68,7 +75,9 @@
 - (void)onAddIssue:(QButtonElement *)buttonElement
 {
     // fill in information from UI:
-    GithubIssue *issue = [GithubIssue object];
+    if (issue == nil) {
+        issue = [GithubIssue object];
+    }
     [self.root fetchValueIntoObject:issue];
 
     // set username and repository, so the RestKit router can fill in this information in the resource URL:
@@ -112,11 +121,13 @@
     QEntryElement *title = [[QEntryElement alloc] init];
     title.title = @"Title";
     title.key = @"title";
+    title.bind = @"textValue:title";
     [main addElement:title];
 
     QMultilineElement *body = [[QMultilineElement alloc] init];
     body.title = @"Body";
     body.key = @"body";
+    body.bind = @"textValue:body";
     [main addElement:body];
 
     [root addSection:main];
@@ -129,8 +140,9 @@
 
     [root addSection:btSection];
     btSection.footerImage = @"footer";
-
+    
     return root;
 }
 
 @end
+        

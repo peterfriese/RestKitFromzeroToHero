@@ -112,13 +112,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    AddIssueViewController *addIssueViewController = [[AddIssueViewController alloc] init];
+    GithubIssue *issue = [issues objectAtIndex:[indexPath row]];
+    addIssueViewController.issue = issue;;
+    addIssueViewController.repouser = repouser;
+    addIssueViewController.repo = repo;
+    addIssueViewController.delegate = self;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addIssueViewController];
+    [self presentModalViewController:navigationController animated:YES];    
 }
 
 #pragma mark - Add issue button
@@ -126,6 +128,7 @@
 - (void)onAddIssue
 {
     AddIssueViewController *addIssueViewController = [[AddIssueViewController alloc] init];
+    addIssueViewController.issue = nil;
     addIssueViewController.repouser = repouser;
     addIssueViewController.repo = repo;
     addIssueViewController.delegate = self;
