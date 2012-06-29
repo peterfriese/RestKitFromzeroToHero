@@ -2,52 +2,45 @@
 //  AppDelegate.m
 //  RestKitDemo2
 //
-//  Created by Peter Friese on 21.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Peter Friese on 25.06.12.
+//  Copyright (c) 2012 Peter Friese. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "UserDetailsController.h"
+#import "GithubUser.h"
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-@synthesize tabbarController;
+@synthesize showUserDetailsViewController;
+
+- (void)initRestKit
+{
+//    // create client with base URL
+//    RKClient *client = [RKClient clientWithBaseURLString:@"http://api.github.com"];
+    
+//    // send unique identifier on each request
+//    [client setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"X-UDID"];
+    
+    // Init RestKit
+    [RKObjectManager objectManagerWithBaseURLString:@"https://api.github.com"];
+    [[[RKObjectManager sharedManager] client] setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"X-UDID"];
+        
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
-    [RKClient clientWithBaseURL:@"http://github.com"];
+    [self initRestKit];
+
+    self.showUserDetailsViewController = [[ShowUserDetailsViewController alloc] init];
+    [self.window setRootViewController:self.showUserDetailsViewController];
     
-    UserDetailsController *userDetailsControllerJson = [[UserDetailsController alloc] init];
-    userDetailsControllerJson.protocol = @"json";
-    [userDetailsControllerJson setUserName:@"octocat"];
-    userDetailsControllerJson.tabBarItem.title = @"User Details (JSON)";
-    
-    UserDetailsController *userDetailsControllerXml = [[UserDetailsController alloc] init];
-    userDetailsControllerXml.protocol = @"xml";
-    [userDetailsControllerXml setUserName:@"peterfriese"];
-    userDetailsControllerXml.tabBarItem.title = @"User Details (XML)";
-    
-    UIViewController *dummy = [[UIViewController alloc] init];
-    dummy.tabBarItem.title = @"Welcome";
-    
-    
-    tabbarController = [[UITabBarController alloc] init];
-    [tabbarController setViewControllers:[NSArray arrayWithObjects:
-                                          dummy,
-                                          userDetailsControllerJson, 
-                                          userDetailsControllerXml,                                           
-                                          nil]];
-    
-    [self.window addSubview:tabbarController.view];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
+    [self.showUserDetailsViewController setUserName:@"peterfriese"];
+
+//    self.window.backgroundColor = [UIColor greenColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
-
 
 @end

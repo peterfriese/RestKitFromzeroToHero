@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		557C3E2EED014D67B641F2ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014D0C1B46749198213B2D3 /* libPods.a */; };
+		880A92CE159AF89D00AB7E53 /* GithubObjectMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 880A92CD159AF89D00AB7E53 /* GithubObjectMappingProvider.m */; };
+		88C85DD6159A35C300C48A93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C85DD5159A35C300C48A93 /* UIKit.framework */; };
+		88C85DD8159A35C300C48A93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C85DD7159A35C300C48A93 /* Foundation.framework */; };
+		88C85DDA159A35C300C48A93 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C85DD9159A35C300C48A93 /* CoreGraphics.framework */; };
+		88C85DE0159A35C300C48A93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88C85DDE159A35C300C48A93 /* InfoPlist.strings */; };
+		88C85DE2159A35C300C48A93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85DE1159A35C300C48A93 /* main.m */; };
+		88C85DE6159A35C300C48A93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85DE5159A35C300C48A93 /* AppDelegate.m */; };
+		88C85DED159A35F100C48A93 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C85DEC159A35F100C48A93 /* Icon.png */; };
+		88C85DEF159A35F600C48A93 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C85DEE159A35F600C48A93 /* Icon@2x.png */; };
+		88C85E14159A36C700C48A93 /* GithubIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E0F159A36C700C48A93 /* GithubIssue.m */; };
+		88C85E15159A36C700C48A93 /* GithubRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E11159A36C700C48A93 /* GithubRepo.m */; };
+		88C85E16159A36C700C48A93 /* GithubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E13159A36C700C48A93 /* GithubUser.m */; };
+		88C85E1B159A36D700C48A93 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E18159A36D700C48A93 /* LoginController.m */; };
+		88C85E1C159A36D700C48A93 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E1A159A36D700C48A93 /* LoginInfo.m */; };
+		88C85E21159A36F000C48A93 /* AddIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E1E159A36F000C48A93 /* AddIssueViewController.m */; };
+		88C85E22159A36F000C48A93 /* BrowseIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E20159A36F000C48A93 /* BrowseIssuesViewController.m */; };
+		88C85E25159A36F900C48A93 /* BrowseReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E24159A36F900C48A93 /* BrowseReposViewController.m */; };
+		88C85E28159A384A00C48A93 /* GithubModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88C85E26159A384A00C48A93 /* GithubModel.xcdatamodeld */; };
+		88C85E4E159A3DC300C48A93 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C85E4D159A3DC300C48A93 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6014D0C1B46749198213B2D3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		880A92CC159AF89D00AB7E53 /* GithubObjectMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubObjectMappingProvider.h; sourceTree = "<group>"; };
+		880A92CD159AF89D00AB7E53 /* GithubObjectMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubObjectMappingProvider.m; sourceTree = "<group>"; };
+		88C85DD1159A35C300C48A93 /* RestKitDemo4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestKitDemo4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C85DD5159A35C300C48A93 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88C85DD7159A35C300C48A93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88C85DD9159A35C300C48A93 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88C85DDD159A35C300C48A93 /* RestKitDemo4-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RestKitDemo4-Info.plist"; sourceTree = "<group>"; };
+		88C85DDF159A35C300C48A93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88C85DE1159A35C300C48A93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88C85DE3159A35C300C48A93 /* RestKitDemo4-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RestKitDemo4-Prefix.pch"; sourceTree = "<group>"; };
+		88C85DE4159A35C300C48A93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88C85DE5159A35C300C48A93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88C85DEC159A35F100C48A93 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		88C85DEE159A35F600C48A93 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		88C85E0E159A36C700C48A93 /* GithubIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubIssue.h; sourceTree = "<group>"; };
+		88C85E0F159A36C700C48A93 /* GithubIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubIssue.m; sourceTree = "<group>"; };
+		88C85E10159A36C700C48A93 /* GithubRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepo.h; sourceTree = "<group>"; };
+		88C85E11159A36C700C48A93 /* GithubRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepo.m; sourceTree = "<group>"; };
+		88C85E12159A36C700C48A93 /* GithubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubUser.h; sourceTree = "<group>"; };
+		88C85E13159A36C700C48A93 /* GithubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubUser.m; sourceTree = "<group>"; };
+		88C85E17159A36D700C48A93 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		88C85E18159A36D700C48A93 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		88C85E19159A36D700C48A93 /* LoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfo.h; sourceTree = "<group>"; };
+		88C85E1A159A36D700C48A93 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
+		88C85E1D159A36F000C48A93 /* AddIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIssueViewController.h; sourceTree = "<group>"; };
+		88C85E1E159A36F000C48A93 /* AddIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIssueViewController.m; sourceTree = "<group>"; };
+		88C85E1F159A36F000C48A93 /* BrowseIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseIssuesViewController.h; sourceTree = "<group>"; };
+		88C85E20159A36F000C48A93 /* BrowseIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseIssuesViewController.m; sourceTree = "<group>"; };
+		88C85E23159A36F900C48A93 /* BrowseReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseReposViewController.h; sourceTree = "<group>"; };
+		88C85E24159A36F900C48A93 /* BrowseReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseReposViewController.m; sourceTree = "<group>"; };
+		88C85E27159A384A00C48A93 /* GithubModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubModel.xcdatamodel; sourceTree = "<group>"; };
+		88C85E4D159A3DC300C48A93 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FB2875F2C5F74910A229080C /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88C85DCE159A35C300C48A93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C85E4E159A3DC300C48A93 /* CoreData.framework in Frameworks */,
+				88C85DD6159A35C300C48A93 /* UIKit.framework in Frameworks */,
+				88C85DD8159A35C300C48A93 /* Foundation.framework in Frameworks */,
+				88C85DDA159A35C300C48A93 /* CoreGraphics.framework in Frameworks */,
+				557C3E2EED014D67B641F2ED /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88C85DC6159A35C300C48A93 = {
+			isa = PBXGroup;
+			children = (
+				88C85E4D159A3DC300C48A93 /* CoreData.framework */,
+				88C85DDB159A35C300C48A93 /* RestKitDemo4 */,
+				88C85DD4159A35C300C48A93 /* Frameworks */,
+				88C85DD2159A35C300C48A93 /* Products */,
+				88C85DEC159A35F100C48A93 /* Icon.png */,
+				88C85DEE159A35F600C48A93 /* Icon@2x.png */,
+				FB2875F2C5F74910A229080C /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		88C85DD2159A35C300C48A93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88C85DD1159A35C300C48A93 /* RestKitDemo4.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88C85DD4159A35C300C48A93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88C85DD5159A35C300C48A93 /* UIKit.framework */,
+				88C85DD7159A35C300C48A93 /* Foundation.framework */,
+				88C85DD9159A35C300C48A93 /* CoreGraphics.framework */,
+				6014D0C1B46749198213B2D3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88C85DDB159A35C300C48A93 /* RestKitDemo4 */ = {
+			isa = PBXGroup;
+			children = (
+				88C85E03159A369300C48A93 /* Model */,
+				88C85E0B159A36AA00C48A93 /* Login */,
+				88C85E0C159A36B000C48A93 /* Browse Repo */,
+				88C85E0D159A36B800C48A93 /* Browse Issues */,
+				88C85DDC159A35C300C48A93 /* Supporting Files */,
+				88C85DE4159A35C300C48A93 /* AppDelegate.h */,
+				88C85DE5159A35C300C48A93 /* AppDelegate.m */,
+				880A92CC159AF89D00AB7E53 /* GithubObjectMappingProvider.h */,
+				880A92CD159AF89D00AB7E53 /* GithubObjectMappingProvider.m */,
+			);
+			path = RestKitDemo4;
+			sourceTree = "<group>";
+		};
+		88C85DDC159A35C300C48A93 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88C85DDD159A35C300C48A93 /* RestKitDemo4-Info.plist */,
+				88C85DDE159A35C300C48A93 /* InfoPlist.strings */,
+				88C85DE1159A35C300C48A93 /* main.m */,
+				88C85DE3159A35C300C48A93 /* RestKitDemo4-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88C85E03159A369300C48A93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88C85E0E159A36C700C48A93 /* GithubIssue.h */,
+				88C85E0F159A36C700C48A93 /* GithubIssue.m */,
+				88C85E10159A36C700C48A93 /* GithubRepo.h */,
+				88C85E11159A36C700C48A93 /* GithubRepo.m */,
+				88C85E12159A36C700C48A93 /* GithubUser.h */,
+				88C85E13159A36C700C48A93 /* GithubUser.m */,
+				88C85E26159A384A00C48A93 /* GithubModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		88C85E0B159A36AA00C48A93 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				88C85E17159A36D700C48A93 /* LoginController.h */,
+				88C85E18159A36D700C48A93 /* LoginController.m */,
+				88C85E19159A36D700C48A93 /* LoginInfo.h */,
+				88C85E1A159A36D700C48A93 /* LoginInfo.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		88C85E0C159A36B000C48A93 /* Browse Repo */ = {
+			isa = PBXGroup;
+			children = (
+				88C85E23159A36F900C48A93 /* BrowseReposViewController.h */,
+				88C85E24159A36F900C48A93 /* BrowseReposViewController.m */,
+			);
+			name = "Browse Repo";
+			sourceTree = "<group>";
+		};
+		88C85E0D159A36B800C48A93 /* Browse Issues */ = {
+			isa = PBXGroup;
+			children = (
+				88C85E1D159A36F000C48A93 /* AddIssueViewController.h */,
+				88C85E1E159A36F000C48A93 /* AddIssueViewController.m */,
+				88C85E1F159A36F000C48A93 /* BrowseIssuesViewController.h */,
+				88C85E20159A36F000C48A93 /* BrowseIssuesViewController.m */,
+			);
+			name = "Browse Issues";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88C85DD0159A35C300C48A93 /* RestKitDemo4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C85DE9159A35C300C48A93 /* Build configuration list for PBXNativeTarget "RestKitDemo4" */;
+			buildPhases = (
+				88C85DCD159A35C300C48A93 /* Sources */,
+				88C85DCE159A35C300C48A93 /* Frameworks */,
+				88C85DCF159A35C300C48A93 /* Resources */,
+				3FBB5820465944AAAD24E388 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RestKitDemo4;
+			productName = RestKitDemo4;
+			productReference = 88C85DD1159A35C300C48A93 /* RestKitDemo4.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88C85DC8159A35C300C48A93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Peter Friese";
+			};
+			buildConfigurationList = 88C85DCB159A35C300C48A93 /* Build configuration list for PBXProject "RestKitDemo4" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88C85DC6159A35C300C48A93;
+			productRefGroup = 88C85DD2159A35C300C48A93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88C85DD0159A35C300C48A93 /* RestKitDemo4 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88C85DCF159A35C300C48A93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C85DE0159A35C300C48A93 /* InfoPlist.strings in Resources */,
+				88C85DED159A35F100C48A93 /* Icon.png in Resources */,
+				88C85DEF159A35F600C48A93 /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FBB5820465944AAAD24E388 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88C85DCD159A35C300C48A93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C85DE2159A35C300C48A93 /* main.m in Sources */,
+				88C85DE6159A35C300C48A93 /* AppDelegate.m in Sources */,
+				88C85E14159A36C700C48A93 /* GithubIssue.m in Sources */,
+				88C85E15159A36C700C48A93 /* GithubRepo.m in Sources */,
+				88C85E16159A36C700C48A93 /* GithubUser.m in Sources */,
+				88C85E1B159A36D700C48A93 /* LoginController.m in Sources */,
+				88C85E1C159A36D700C48A93 /* LoginInfo.m in Sources */,
+				88C85E21159A36F000C48A93 /* AddIssueViewController.m in Sources */,
+				88C85E22159A36F000C48A93 /* BrowseIssuesViewController.m in Sources */,
+				88C85E25159A36F900C48A93 /* BrowseReposViewController.m in Sources */,
+				88C85E28159A384A00C48A93 /* GithubModel.xcdatamodeld in Sources */,
+				880A92CE159AF89D00AB7E53 /* GithubObjectMappingProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88C85DDE159A35C300C48A93 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88C85DDF159A35C300C48A93 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88C85DE7159A35C300C48A93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88C85DE8159A35C300C48A93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88C85DEA159A35C300C48A93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB2875F2C5F74910A229080C /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestKitDemo4/RestKitDemo4-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "RestKitDemo4/RestKitDemo4-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		88C85DEB159A35C300C48A93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB2875F2C5F74910A229080C /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestKitDemo4/RestKitDemo4-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "RestKitDemo4/RestKitDemo4-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88C85DCB159A35C300C48A93 /* Build configuration list for PBXProject "RestKitDemo4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C85DE7159A35C300C48A93 /* Debug */,
+				88C85DE8159A35C300C48A93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88C85DE9159A35C300C48A93 /* Build configuration list for PBXNativeTarget "RestKitDemo4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C85DEA159A35C300C48A93 /* Debug */,
+				88C85DEB159A35C300C48A93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		88C85E26159A384A00C48A93 /* GithubModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88C85E27159A384A00C48A93 /* GithubModel.xcdatamodel */,
+			);
+			currentVersion = 88C85E27159A384A00C48A93 /* GithubModel.xcdatamodel */;
+			path = GithubModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 88C85DC8159A35C300C48A93 /* Project object */;
+}
