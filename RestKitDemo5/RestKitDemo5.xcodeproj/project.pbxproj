@@ -23,7 +23,6 @@
 		880A92D6159B084A00AB7E53 /* BrowseReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880A92D5159B084A00AB7E53 /* BrowseReposViewController.m */; };
 		880A92D9159B0B6700AB7E53 /* GithubModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 880A92D7159B0B6700AB7E53 /* GithubModel.xcdatamodeld */; };
 		880A92DB159B0C6300AB7E53 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880A92DA159B0C6300AB7E53 /* CoreData.framework */; };
-		88907806159B0E4B00F5713F /* RestKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88907805159B0E4B00F5713F /* RestKitResources.bundle */; };
 		88907813159B125600F5713F /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 88907810159B125600F5713F /* empty.png */; };
 		88907814159B125600F5713F /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 88907811159B125600F5713F /* error.png */; };
 		88907815159B125600F5713F /* offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 88907812159B125600F5713F /* offline.png */; };
@@ -256,7 +255,6 @@
 				8804DD02159AF64A006BA491 /* InfoPlist.strings in Resources */,
 				880A92AA159AF6DE00AB7E53 /* Icon.png in Resources */,
 				880A92AD159AF6E500AB7E53 /* Icon@2x.png in Resources */,
-				88907806159B0E4B00F5713F /* RestKitResources.bundle in Resources */,
 				88907813159B125600F5713F /* empty.png in Resources */,
 				88907814159B125600F5713F /* error.png in Resources */,
 				88907815159B125600F5713F /* offline.png in Resources */,

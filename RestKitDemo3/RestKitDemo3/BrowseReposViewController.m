@@ -30,7 +30,7 @@
 - (void)fetchData
 {
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[self resourcePath] usingBlock:^(RKObjectLoader *loader) {
-        [loader setOnDidLoadObjects:^(NSArray *objects) {
+        [loader setOnDi dLoadObjects:^(NSArray *objects) {
             self.repos = objects;
             [self.tableView reloadData];
         }];

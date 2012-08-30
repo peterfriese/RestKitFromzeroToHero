@@ -3,3 +3,6 @@ build
 RestKitDemo2/build
 RestKitSample3/build
 RestKitSample4/build
+.DS_Store
+Podfile.lock
+Pods
